@@ -5,7 +5,7 @@ This repository contains data and scripts used for our Singapore Platinum Metage
 ## Directory structure
 
 - [envs](envs): Conda environment used for this project
-- [scripts](jupyter and Rmarkdown): folder containing code used for this project
+- [scripts](scripts): folder containing code used for this project (jupyter and Rmarkdown)
 - [tables](tables): Input data used
 
 ## Software versions
