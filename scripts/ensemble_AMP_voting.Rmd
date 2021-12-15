@@ -1,0 +1,257 @@
+---
+title: "ensemble_AMP_voting"
+author: "Minghao Chia"
+date: "11/25/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load libraries
+
+```{r}
+library(tidyverse)
+```
+
+
+Load BGC GCF metadata
+
+```{r}
+GCF_metadata <- read_tsv("../tables/all_GCF_curated_metadata.tsv")
+
+```
+
+This is code to reproduce the analyses in supplemental note 2 of the SPMP manuscript. 
+
+Firstly, benchmark the ensemble voting method using a benchmark fasta file from Burdukiewicz et al 2020 Ampgram benchmark dataset (https://raw.githubusercontent.com/michbur/AmpGram-analysis/master/results/benchmark.fasta),
+
+Load predictions from 4 models:
+1) AMPscannerv2
+2) AmpGram
+3) AMPDiscover-RF-AMP
+4) AMPDiscover-RF-ABP
+
+To avoid over-estimates of model performance, remove predictions for all sequences that are present in their training sets of each of these four models. 
+
+i) By default, the AmpGram benchmark.fasta does not overlap with the training set for AmpGram
+ii) The training set for AMPscannerv2 can be obtained here: https://www.dveltri.com/ascan/v2/news.html
+iii) The training set for AMPDiscover RF models can be obtained here: https://biocom-ampdiscover.cicese.mx/dataset, named TR_starPep_AMP and TR_starPep_AB
+
+Sequences common to the Ampgram benchmark dataset and the training sets of each model were identified on the command line using seqkit common and seqkit rmdup. 
+78 positive AMP sequences were kept after this. 
+Subsequently, the same number (n = 78) scrambled negative control peptide sequences were randomly selected from the benchmark.fasta file using seqkit sample -n 78
+
+The final set of fasta sequences for benchmarking are in "../tables/ampgram_benchmark_CHOSEN.fasta" and a tsv containing their headers are in "../tables/ampgram_benchmark_CHOSEN.fastaheaders"
+
+##########
+
+Load benchmarking (bm) results for each model
+
+```{r, message=FALSE}
+
+chosen_seqs <- read_tsv("../tables/ampgram_benchmark_CHOSEN.fastaheaders", col_names = "SeqID")
+
+bm_ampscanner <- read_csv("../tables/ampscannerv2_benchmark_Prediction_Summary.csv") %>% filter(SeqID %in% chosen_seqs$SeqID)
+
+bm_ampgram <- read_tsv("../tables/ampgram_benchmark_df.tsv") %>% dplyr::rename(SeqID=peptide_name) %>% filter(SeqID %in% chosen_seqs$SeqID)
+
+bm_ampdiscover <- read_csv("../tables/AMPDiscover_benchmark_predictions.csv") %>% dplyr::rename(SeqID=IDs) %>% filter(SeqID %in% chosen_seqs$SeqID)
+```
+
+Define functions used in this script.
+
+```{r}
+ensemble_stats <- function(ampscanner, ampgram, ampdiscover, benchmark){
+  
+  ampscanner_df <- ampscanner %>% dplyr::select(c(SeqID,Prediction_Class)) %>% 
+    dplyr::rename(ampscanner_pred=Prediction_Class)
+  ampscanner_df$ampscanner_pred <- ifelse(ampscanner_df$ampscanner_pred == "AMP", 1,0 )
+  
+  ampgram_df <- ampgram
+  ampgram_df$ampgram_pred <- ifelse(ampgram_df$ampgram_prob > 0.5, 1, 0)
+  ampgram_df <- ampgram_df %>% dplyr::select(c(SeqID,ampgram_pred))
+  
+  
+  ampdiscover_df <- ampdiscover %>% dplyr::select(c("SeqID","qsar_Result_ProtDCal-AMP_RF", 
+                                                    "qsar_Result_ProtDCal-AB_RF"))
+  
+  ampdiscover_df$ampdiscover_AMP_pred <- ifelse(ampdiscover_df$`qsar_Result_ProtDCal-AMP_RF` == "AMP", 1, 0)
+  ampdiscover_df$ampdiscover_AB_pred <- ifelse(ampdiscover_df$`qsar_Result_ProtDCal-AB_RF` == "ABP", 1, 0)
+  
+  ampdiscover_df <- ampdiscover_df %>% dplyr::select(c(SeqID, ampdiscover_AMP_pred, ampdiscover_AB_pred))
+  
+  
+  
+  ensemble_lst <- tibble::lst(ampscanner_df, ampgram_df, ampdiscover_df)
+    
+  ensemble_df <- Reduce(function(x, y) merge(x, y, by="SeqID", all = TRUE), ensemble_lst)
+  
+  ensemble_df$vote_ampscanner_ampgram <- apply(ensemble_df %>% dplyr::select(ampgram_pred,ampscanner_pred),1, sum) #Vote count for AMPscanner and ampgram
+  
+  ensemble_df$vote_ampdiscover <- apply(ensemble_df %>% dplyr::select(ampdiscover_AMP_pred, ampdiscover_AB_pred),1, sum) #Vote count for AMPDiscover's AMP and AB models
+  
+  ensemble_df$joint_pred <- ifelse(ensemble_df$vote_ampscanner_ampgram == 2 & ensemble_df$vote_ampdiscover >= 1 , 1,0)
+  
+  
+  if(benchmark==TRUE){
+  ensemble_df$ground_truth <- ifelse(str_detect(ensemble_df$SeqID, "dbAMP"),1,0)
+  ensemble_df$true_positive <- ifelse(ensemble_df$ground_truth==1 & ensemble_df$joint_pred==1, 1,0)
+  ensemble_df$true_negative <- ifelse(ensemble_df$ground_truth==0 & ensemble_df$joint_pred==0, 1,0)
+  ensemble_df$false_positive <- ifelse(ensemble_df$ground_truth==0 & ensemble_df$joint_pred==1, 1,0)
+  ensemble_df$false_negative <- ifelse(ensemble_df$ground_truth==1 & ensemble_df$joint_pred==0, 1,0)
+    
+  }
+  
+  return(ensemble_df)
+}
+
+calc_stats <- function(input_df){
+  
+TP <- sum(input_df$true_positive)
+
+TN <- sum(input_df$true_negative) 
+
+FP <- sum(input_df$false_positive)
+
+FN <- sum(input_df$false_negative)
+
+Sensitivity <- (TP)/(TP+FN)
+Specificity <- (TN)/(TN+FP)
+Precision <- (TP)/(TP+FP)
+Accuracy <- (TP+TN)/(TP+TN+FP+FN)
+
+return(tibble::lst(Sensitivity, Specificity, Precision, Accuracy))
+  
+}
+```
+
+Obtain benchmarking results from the ensemble voting model
+
+```{r}
+bm_ensemble <- ensemble_stats(ampscanner = bm_ampscanner,
+                       ampgram = bm_ampgram,
+                       ampdiscover = bm_ampdiscover, benchmark=TRUE)
+
+bm_ensemble_stats <- calc_stats(bm_ensemble)
+
+sum(bm_ensemble$true_positive) #61
+
+sum(bm_ensemble$true_negative) #76
+
+sum(bm_ensemble$false_positive) #2
+
+sum(bm_ensemble$false_negative) #17
+
+
+bm_ensemble_stats
+
+```
+
+Load prediction results for antismash short ORFs in predicted NOVEL peptide BGCs WITH transporters in the same cluster. 
+
+These sORFs encode putative peptides that are > 10 AA and < 200 AA in length. 
+
+
+
+
+```{r, message=FALSE}
+
+#Ampscanner v2 results
+AS_ampscanner <- read_csv("../tables/AS_novel_peptides_Prediction_Summary.csv") 
+
+#Ampgram results
+AS_ampgram <- read_tsv("../tables/all_AS_novel_peptides_ampgram.tsv") %>% dplyr::rename(SeqID=peptide_name)
+
+#AmpDiscover results
+AS_ampdiscover <- read_csv("../tables/AS_novel_peptides_AMPDiscover_predictions.csv") %>% dplyr::rename(SeqID=IDs)
+
+
+#Load peptide AA length data
+
+AS_novel_peptide_lengths <- read_tsv("../tables/all_AS_novel_peptides.sizes", 
+                                     col_names = c("SeqID", "AA_len"))
+
+#Load in Antismash functional annotations for these peptides
+AS_peptides_with_transporter_gene_funcs <- read_tsv("../tables/AS_peptides_with_transporter_gene_funcs_combined.tsv", col_names = c("SeqID", "AS_func"))
+
+AS_non_bacteriocin_with_transporter_gene_funcs <- AS_peptides_with_transporter_gene_funcs %>% filter(str_detect(AS_peptides_with_transporter_gene_funcs$AS_func, 
+                                                                                                         pattern="peptide|RaS-RiPP"))
+
+```
+
+Assume that bacteriocins predicted by Antismash have AMP/ABP activity.
+
+To increase confidence, only consider the short ORFs that have been labelled as -peptide" or "RaS-RiPP" by antismash 
+
+```{r}
+AS_novel_peptide_ensemble <- ensemble_stats(ampscanner = AS_ampscanner,
+                       ampgram = AS_ampgram,
+                       ampdiscover = AS_ampdiscover, benchmark=FALSE)
+
+bgc_name_split <- str_split(AS_novel_peptide_ensemble$SeqID, pattern="_from_", n = 2, simplify=FALSE)
+bgc_name_vec <- vector(mode="character", length=nrow(AS_novel_peptide_ensemble))
+
+for (i in 1:nrow(AS_novel_peptide_ensemble)){
+  bgc_name_vec[i] <- bgc_name_split[[i]][[2]]
+}
+
+AS_novel_peptide_ensemble$QUERYID <- bgc_name_vec
+
+
+AS_novel_peptide_ensemble <- merge(AS_novel_peptide_ensemble, GCF_metadata, by = "QUERYID")
+
+#Add AA lengths
+AS_novel_peptide_ensemble <- merge(AS_novel_peptide_ensemble, AS_novel_peptide_lengths, by = "SeqID")
+
+#To increase confidence, only consider the short ORFs that have been labelled as -peptide" or "RaS-RiPP" by antismash 
+
+AS_novel_peptide_ensemble_AMP <- AS_novel_peptide_ensemble %>% filter(joint_pred==1) %>%  merge(., AS_non_bacteriocin_with_transporter_gene_funcs, by = "SeqID")
+
+
+```
+
+What is the peptide class distribution of these novel AMP/ABPs in the SPMP MAGs? Mostly sactipeptides.
+```{r}
+
+plyr::count(AS_novel_peptide_ensemble_AMP %>% dplyr::select("AS_func", "QUERYID") %>% unique(.), "AS_func") #unique so no double counting the same BGC
+```
+Which species express these novel AMPs/ABPs in the SPMP dataset?
+
+```{r}
+plyr::count(AS_novel_peptide_ensemble_AMP %>% dplyr::select("anno_taxon", "QUERYID") %>% unique(.), "anno_taxon")
+```
+
+
+Out of 107 RiPP BGCs that were not bacteriocins, 54 of them were predicted to also be AMPs. 
+
+
+
+```{r}
+
+#How many novel, non bacteriocin peptide BGCs with transporters are there, regardless of AMP/ABP activity? 107.
+
+length(unique(AS_novel_peptide_ensemble %>% filter(TYPE != "bacteriocin") %>% pull(QUERYID))) #107
+
+#How many novel, non bacteriocin peptide BGCs with transporters are there, with predicted AMP/ABP activity? 54.
+
+length(unique(AS_novel_peptide_ensemble_AMP$QUERYID))
+
+
+```
+One example is a lanthipeptide (GCF 459) found in Dorea longicatena B. A blastp search of its primary sequence against the NCBI non-redundant protein sequence database found no other sequences with significant similarity. This peptide sequence has a 32% hydrophobic amino acid composition and a net positive charge of +5, which could favour its insertion into the cell walls and membranes of its targets. 
+
+Another example is a lassopeptide (GCF26) found in a Ruminococcus species. A blastp search of its primary sequence against the NCBI non-redundant protein sequence database found a 100% match to an uncharacterized protein (Sequence ID: SCH73849.1) found in the genome of an uncultured Blautia species. This peptide sequence comprises of 35% hydrophobic amino acids and a slight net positive charge, which could also favour its insertion into target cell walls.  Further experimental work is needed to verify that these peptides have anti-microbial properties against other gut bacteria. Taken together, our initial analyses highlight the potential of using the SPMP database for bioprospecting.  
+
+
+There are also 68 bacteriocin BGCs with transporters.
+
+```{r}
+
+length(unique(AS_novel_peptide_ensemble %>% filter(TYPE == "bacteriocin") %>% pull(QUERYID))) #68
+
+
+```
+
+

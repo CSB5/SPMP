@@ -1,0 +1,307 @@
+ctg51_67_from_TLL02_bin.56_c00051_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_1126_from_TLL02_bin.71_c00002_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg4_16_from_TLL02_bin.80_opera_contig_271.region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg4_30_from_TLL02_bin.80_opera_contig_271.region001	biosynthetic-additional (rule-based-clusters) Abi
+ctg4_34_from_TLL02_bin.80_opera_contig_271.region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg4_38_from_TLL02_bin.80_opera_contig_271.region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg7_3_from_TLL03_bin.58_opera_contig_57.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg1_50_from_TLL03_bin.64_opera_contig_25.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg1_54_from_TLL03_bin.64_opera_contig_25.region001	regulatory (smcogs) SMCOG1266:hydrogen peroxide sensitive repressor (Score: 90.8; E-value: 1.2e-27)
+ctg14_39_from_TLL03_bin.81_c00014_opera_c...region001	biosynthetic (rule-based-clusters) lassopeptide: micJ25
+ctg14_41_from_TLL03_bin.81_c00014_opera_c...region001	regulatory (smcogs) SMCOG1032:RNA polymerase, sigma-24 subunit, ECF subfamily (Score: 106.1; E-value: 2.7e-32)
+ctg14_45_from_TLL03_bin.81_c00014_opera_c...region001	regulatory (smcogs) SMCOG1032:RNA polymerase, sigma-24 subunit, ECF subfamily (Score: 99.2; E-value: 3.4e-30)
+ctg6_161_from_TLL03_bin.84_c00006_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg48_9_from_TLL04_bin.66_c00048_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg5_17_from_TLL05_bin.78_opera_contig_234.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg55_3_from_TLL05_bin.93_c00055_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg29_43_from_TLL05_bin.95_c00029_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg6_124_from_TLL06_bin.86_c00006_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 66.4; E-value: 6.7e-20)
+ctg6_128_from_TLL06_bin.86_c00006_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg24_100_from_TLL08_bin.63_c00024_opera_c...region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 96.7; E-value: 2.9e-29)
+ctg24_101_from_TLL08_bin.63_c00024_opera_c...region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 109.6; E-value: 3.4e-33)
+ctg24_107_from_TLL08_bin.63_c00024_opera_c...region001	other (smcogs) SMCOG1273:hypothetical protein (Score: 137.8; E-value: 8.2e-42)
+ctg24_112_from_TLL08_bin.63_c00024_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg41_2_from_TLL08_bin.80_c00041_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg52_23_from_TLL08_bin.80_c00052_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg9_239_from_TLL09_bin.4_c00009_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg72_42_from_TLL100_bin.69_c00072_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg72_52_from_TLL100_bin.69_c00072_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg25_145_from_TLL100_bin.86_c00025_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg78_4_from_TLL101_bin.35_c00078_opera_c...region001	biosynthetic-additional (rule-based-clusters) PP-binding
+ctg78_9_from_TLL101_bin.35_c00078_opera_c...region001	biosynthetic-additional (rule-based-clusters) PP-binding
+ctg16_16_from_TLL101_bin.49_c00016_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg28_20_from_TLL102_bin.122_c00028_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg9_2_from_TLL102_bin.132_opera_contig_414.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg1_486_from_TLL102_bin.49_opera_contig_1.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg63_9_from_TLL102_bin.55_c00063_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg36_20_from_TLL102_bin.73_c00036_opera_c...region001	transport (smcogs) SMCOG1067:putative ABC transporter permease protein (Score: 124.6; E-value: 8e-38)
+ctg36_24_from_TLL102_bin.73_c00036_opera_c...region001	regulatory (smcogs) SMCOG1287:AraC family transcriptional regulator (Score: 63.2; E-value: 3.5e-19)
+ctg36_26_from_TLL102_bin.73_c00036_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg36_31_from_TLL102_bin.73_c00036_opera_c...region001	biosynthetic-additional (rule-based-clusters) PF00881
+ctg41_80_from_TLL103_bin.12_c00041_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg41_85_from_TLL103_bin.12_c00041_opera_c...region001	biosynthetic-additional (rule-based-clusters) Peptidase_C39
+ctg41_87_from_TLL103_bin.12_c00041_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg41_88_from_TLL103_bin.12_c00041_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg41_89_from_TLL103_bin.12_c00041_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg41_90_from_TLL103_bin.12_c00041_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg41_91_from_TLL103_bin.12_c00041_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg78_59_from_TLL103_bin.25_c00078_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg25_11_from_TLL105_bin.27_c00025_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg12_857_from_TLL105_bin.8_c00012_opera_c...region001	biosynthetic (rule-based-clusters) lanthipeptide: LANC_like
+ctg12_865_from_TLL105_bin.8_c00012_opera_c...region001	biosynthetic (rule-based-clusters) lanthipeptide: Lant_dehydr_N
+ctg12_866_from_TLL105_bin.8_c00012_opera_c...region001	biosynthetic (rule-based-clusters) lanthipeptide: Lant_dehydr_N
+ctg11_81_from_TLL106_bin.23_c00011_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg48_43_from_TLL106_bin.35_c00048_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg4_37_from_TLL106_bin.55_opera_contig_45.region001	biosynthetic-additional (rule-based-clusters) Fer4_12
+ctg4_40_from_TLL106_bin.55_opera_contig_45.region001	regulatory (smcogs) SMCOG1032:RNA polymerase, sigma-24 subunit, ECF subfamily (Score: 123.7; E-value: 9.9e-38)
+ctg24_652_from_TLL106_bin.76_c00024_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg22_81_from_TLL106_bin.80_c00022_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg17_25_from_TLL10_bin.30_c00017_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg1_29_from_TLL11_bin.113_opera_contig_2.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg15_3_from_TLL11_bin.18_c00015_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg15_17_from_TLL11_bin.18_c00015_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg45_11_from_TLL12_bin.66_c00045_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg45_15_from_TLL12_bin.66_c00045_opera_c...region001	regulatory (smcogs) SMCOG1266:hydrogen peroxide sensitive repressor (Score: 84.6; E-value: 1e-25)
+ctg4_193_from_TLL12_bin.82_c00004_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Lactococcin_972
+ctg4_915_from_TLL14_bin.13_c00004_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: Lactococcin_972
+ctg4_989_from_TLL14_bin.13_c00004_opera_c...region003	biosynthetic (rule-based-clusters) bacteriocin: Lactococcin_972
+ctg7_1812_from_TLL14_bin.18_c00007_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg26_106_from_TLL14_bin.20_c00026_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+allorf_06808_06978_from_TLL15_bin.32_c00063_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg61_2_from_TLL17_bin.50_c00061_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg61_7_from_TLL17_bin.50_c00061_opera_c...region001	biosynthetic-additional (rule-based-clusters) Peptidase_C39
+ctg105_6_from_TLL18_bin.122_c00105_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg28_47_from_TLL18_bin.137_c00028_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg28_59_from_TLL18_bin.137_c00028_opera_c...region001	biosynthetic-additional (smcogs) SMCOG1170:metallo-beta-lactamase family protein (Score: 67.8; E-value: 1.6e-20)
+ctg2_1029_from_TLL18_bin.17_c00002_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_1030_from_TLL18_bin.17_c00002_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_1036_from_TLL18_bin.17_c00002_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg10_66_from_TLL19_bin.5_c00010_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg26_122_from_TLL21_bin.32_c00026_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg26_140_from_TLL21_bin.32_c00026_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg2_1456_from_TLL21_bin.53_c00002_opera_c...region002	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg2_1460_from_TLL21_bin.53_c00002_opera_c...region002	other (smcogs) SMCOG1148:hypothetical protein (Score: 66.4; E-value: 6.7e-20)
+ctg43_133_from_TLL24_bin.31_c00043_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg31_28_from_TLL25_bin.36_c00031_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg16_155_from_TLL25_bin.49_c00016_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg22_11_from_TLL25_bin.5_c00022_opera_c...region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 85.2; E-value: 9.6e-26)
+ctg22_13_from_TLL25_bin.5_c00022_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Lactococcin_972
+ctg29_10_from_TLL26_bin.80_opera_contig_548.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg8_129_from_TLL26_bin.85_c00008_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg2_193_from_TLL26_bin.96_c00002_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Lactococcin_972
+ctg16_35_from_TLL27_bin.26_c00016_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_666_from_TLL27_bin.5_c00002_opera_c...region002	regulatory (smcogs) SMCOG1032:RNA polymerase, sigma-24 subunit, ECF subfamily (Score: 109.8; E-value: 1.9e-33)
+ctg2_670_from_TLL27_bin.5_c00002_opera_c...region002	biosynthetic-additional (rule-based-clusters) Abi
+ctg2_672_from_TLL27_bin.5_c00002_opera_c...region002	biosynthetic-additional (rule-based-clusters) Abi
+ctg2_674_from_TLL27_bin.5_c00002_opera_c...region002	biosynthetic-additional (rule-based-clusters) Abi
+ctg2_677_from_TLL27_bin.5_c00002_opera_c...region002	biosynthetic-additional (rule-based-clusters) Abi
+ctg30_90_from_TLL28_bin.29_c00030_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg6_8_from_TLL28_bin.85_opera_contig_394.region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 94.6; E-value: 1.3e-28)
+ctg3_922_from_TLL29_bin.83_c00003_opera_c...region001	biosynthetic-additional (rule-based-clusters) PF05402
+ctg3_925_from_TLL29_bin.83_c00003_opera_c...region001	biosynthetic-additional (rule-based-clusters) PF05402
+ctg22_8_from_TLL30_bin.127_opera_contig_958.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg33_8_from_TLL30_bin.44_c00033_opera_c...region001	transport (smcogs) SMCOG1067:putative ABC transporter permease protein (Score: 107; E-value: 1.8e-32)
+ctg33_12_from_TLL30_bin.44_c00033_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg33_17_from_TLL30_bin.44_c00033_opera_c...region001	biosynthetic-additional (rule-based-clusters) PF00881
+ctg33_1_from_TLL30_bin.67_c00033_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg3_47_from_TLL31_bin.151_opera_contig_31.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg1_98_from_TLL31_bin.25_opera_contig_2.region001	biosynthetic-additional (rule-based-clusters) PF05402
+ctg1_99_from_TLL31_bin.25_opera_contig_2.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg2_4_from_TLL31_bin.31_opera_contig_191.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg2_11_from_TLL31_bin.31_opera_contig_191.region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 138.6; E-value: 4.5e-42)
+ctg10_35_from_TLL31_bin.60_opera_contig_218.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg10_37_from_TLL31_bin.60_opera_contig_218.region001	regulatory (smcogs) SMCOG1078:LacI family transcription regulator (Score: 108.7; E-value: 6.2e-33)
+ctg10_41_from_TLL31_bin.60_opera_contig_218.region001	biosynthetic-additional (smcogs) SMCOG1210:glycerol kinase (Score: 143.7; E-value: 1.1e-43)
+ctg18_32_from_TLL31_bin.60_opera_contig_408.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg18_41_from_TLL31_bin.60_opera_contig_408.region001	biosynthetic-additional (rule-based-clusters) PP-binding
+ctg18_43_from_TLL31_bin.60_opera_contig_408.region001	biosynthetic (rule-based-clusters) arylpolyene: APE_KS2
+ctg18_44_from_TLL31_bin.60_opera_contig_408.region001	biosynthetic-additional (smcogs) SMCOG1270:UDP-3-O-[3-hydroxymyristoyl] N-acetylglucosamine (Score: 86.7; E-value: 2.8e-26)
+ctg4_155_from_TLL31_bin.81_c00004_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg4_166_from_TLL31_bin.81_c00004_opera_c...region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 112.5; E-value: 4.3e-34)
+ctg19_15_from_TLL31_bin.90_opera_contig_624.region001	biosynthetic-additional (smcogs) SMCOG1115:HAD-superfamily hydrolase, subfamily IA, variant (Score: 122.6; E-value: 2.9e-37)
+ctg19_20_from_TLL31_bin.90_opera_contig_624.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg3_51_from_TLL33_bin.63_opera_contig_27.region001	regulatory (smcogs) SMCOG1032:RNA polymerase, sigma-24 subunit, ECF subfamily (Score: 88.7; E-value: 5.7e-27)
+ctg3_53_from_TLL33_bin.63_opera_contig_27.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg3_57_from_TLL33_bin.63_opera_contig_27.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg3_58_from_TLL33_bin.63_opera_contig_27.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg3_59_from_TLL33_bin.63_opera_contig_27.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg3_60_from_TLL33_bin.63_opera_contig_27.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg3_61_from_TLL33_bin.63_opera_contig_27.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg3_67_from_TLL33_bin.63_opera_contig_27.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg3_73_from_TLL33_bin.63_opera_contig_27.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg3_75_from_TLL33_bin.63_opera_contig_27.region001	other (smcogs) SMCOG1054:hypothetical protein (Score: 86.5; E-value: 4.2e-26)
+ctg29_6_from_TLL35_bin.42_c00029_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg88_43_from_TLL36_bin.42_c00088_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg1_103_from_TLL36_bin.66_opera_contig_33.region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg17_49_from_TLL37_bin.24_c00017_opera_c...region001	regulatory (smcogs) SMCOG1136:GntR family transcriptional regulator (Score: 90.7; E-value: 1.8e-27)
+ctg17_50_from_TLL37_bin.24_c00017_opera_c...region001	regulatory (smcogs) SMCOG1136:GntR family transcriptional regulator (Score: 57.1; E-value: 3.2e-17)
+ctg17_55_from_TLL37_bin.24_c00017_opera_c...region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 169.9; E-value: 1.2e-51)
+ctg17_58_from_TLL37_bin.24_c00017_opera_c...region001	biosynthetic (rule-based-clusters) thiopeptide: thiostrepton
+ctg17_65_from_TLL37_bin.24_c00017_opera_c...region001	biosynthetic-additional (smcogs) SMCOG1059:acetyl-CoA carboxylase, carboxyl transferase, (Score: 190.7; E-value: 8e-58)
+ctg17_68_from_TLL37_bin.24_c00017_opera_c...region001	biosynthetic-additional (smcogs) SMCOG1270:UDP-3-O-[3-hydroxymyristoyl] N-acetylglucosamine (Score: 117.1; E-value: 1.6e-35)
+ctg4_71_from_TLL40_bin.121_opera_contig_223.region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 88.2; E-value: 1.1e-26)
+ctg4_74_from_TLL40_bin.121_opera_contig_223.region001	biosynthetic-additional (smcogs) SMCOG1154:Pseudouridine synthase (Score: 123.4; E-value: 1.3e-37)
+ctg4_75_from_TLL40_bin.121_opera_contig_223.region001	biosynthetic-additional (smcogs) SMCOG1154:Pseudouridine synthase (Score: 108.8; E-value: 3.6e-33)
+ctg1_48_from_TLL40_bin.22_opera_contig_33.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg1_53_from_TLL40_bin.22_opera_contig_33.region001	regulatory (smcogs) SMCOG1135:MarR family transcriptional regulator (Score: 88; E-value: 6.9e-27)
+ctg1_55_from_TLL40_bin.22_opera_contig_33.region001	regulatory (smcogs) SMCOG1136:GntR family transcriptional regulator (Score: 67.8; E-value: 1.8e-20)
+ctg2_67_from_TLL40_bin.68_opera_contig_99.region001	biosynthetic-additional (rule-based-clusters) Fer4_12
+ctg2_69_from_TLL40_bin.68_opera_contig_99.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg2_73_from_TLL40_bin.68_opera_contig_99.region001	regulatory (smcogs) SMCOG1266:hydrogen peroxide sensitive repressor (Score: 86.3; E-value: 3.1e-26)
+ctg2_78_from_TLL40_bin.68_opera_contig_99.region001	regulatory (smcogs) SMCOG1058:ArsR family transcriptional regulator (Score: -1.6; E-value: 44)
+ctg12_58_from_TLL42_bin.25_c00012_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg25_67_from_TLL43_bin.12_c00025_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg5_130_from_TLL44_bin.102_c00005_opera_c...region001	biosynthetic-additional (smcogs) SMCOG1001:short-chain dehydrogenase/reductase SDR (Score: 63.3; E-value: 4.2e-19)
+ctg5_144_from_TLL44_bin.102_c00005_opera_c...region001	biosynthetic (rule-based-clusters) RaS-RiPP: TIGR01716
+ctg5_152_from_TLL44_bin.102_c00005_opera_c...region001	biosynthetic-additional (smcogs) SMCOG1001:short-chain dehydrogenase/reductase SDR (Score: 117.6; E-value: 1.1e-35)
+ctg5_154_from_TLL44_bin.102_c00005_opera_c...region001	biosynthetic-additional (smcogs) SMCOG1163:rhodanese domain-containing protein (Score: 61.4; E-value: 1.2e-18)
+ctg1_39_from_TLL44_bin.80_opera_contig_45.region001	transport (smcogs) SMCOG1214:binding-protein-dependent transport systems (Score: 114; E-value: 1.2e-34)
+ctg1_48_from_TLL44_bin.80_opera_contig_45.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg1_54_from_TLL44_bin.80_opera_contig_45.region001	regulatory (smcogs) SMCOG1135:MarR family transcriptional regulator (Score: 87.4; E-value: 1e-26)
+ctg2_168_from_TLL45_bin.165_opera_contig_5.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg5_195_from_TLL45_bin.32_c00005_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 66.3; E-value: 7.3e-20)
+ctg8_21_from_TLL45_bin.36_c00008_opera_c...region001	biosynthetic-additional (rule-based-clusters) Peptidase_C39
+ctg4_66_from_TLL45_bin.42_c00004_opera_c...region001	biosynthetic-additional (rule-based-clusters) PF13186
+ctg4_68_from_TLL45_bin.42_c00004_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg3_2093_from_TLL45_bin.44_c00003_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg3_2094_from_TLL45_bin.44_c00003_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg3_2098_from_TLL45_bin.44_c00003_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg10_405_from_TLL45_bin.91_c00010_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg10_409_from_TLL45_bin.91_c00010_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 60.1; E-value: 6e-18)
+allorf_439257_439403_from_TLL45_bin.91_c00010_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg5_107_from_TLL46_bin.11_c00005_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg5_82_from_TLL46_bin.21_c00005_opera_c...region001	regulatory (smcogs) SMCOG1032:RNA polymerase, sigma-24 subunit, ECF subfamily (Score: 107.2; E-value: 1.2e-32)
+ctg5_84_from_TLL46_bin.21_c00005_opera_c...region001	biosynthetic (rule-based-clusters) lassopeptide: micJ25
+ctg10_432_from_TLL46_bin.36_c00010_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg6_152_from_TLL46_bin.66_c00006_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg8_49_from_TLL48_bin.10_opera_contig_165.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg44_19_from_TLL48_bin.117_c00044_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg11_130_from_TLL48_bin.67_c00011_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg4_760_from_TLL49_bin.11_c00004_opera_c...region002	other (smcogs) SMCOG1151:transposase (Score: 60.6; E-value: 2.3e-18)
+ctg22_742_from_TLL49_bin.43_c00022_opera_c...region002	other (smcogs) SMCOG1148:hypothetical protein (Score: 60.6; E-value: 4e-18)
+ctg22_747_from_TLL49_bin.43_c00022_opera_c...region002	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg39_6_from_TLL49_bin.96_c00039_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg11_74_from_TLL51_bin.128_c00011_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg13_5_from_TLL55_bin.34_c00013_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 60.6; E-value: 4e-18)
+ctg13_9_from_TLL55_bin.34_c00013_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg7_419_from_TLL55_bin.41_c00007_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 66.4; E-value: 6.7e-20)
+ctg7_423_from_TLL55_bin.41_c00007_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_425162_425353_from_TLL55_bin.41_c00007_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg105_68_from_TLL55_bin.46_c00105_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg4_534_from_TLL55_bin.47_c00004_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg93_5_from_TLL56_bin.101_c00093_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg30_162_from_TLL56_bin.11_c00030_opera_c...region002	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg30_170_from_TLL56_bin.11_c00030_opera_c...region002	other (smcogs) SMCOG1148:hypothetical protein (Score: 60.6; E-value: 4e-18)
+ctg30_174_from_TLL56_bin.11_c00030_opera_c...region002	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg150_2_from_TLL56_bin.19_c00150_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg150_4_from_TLL56_bin.19_c00150_opera_c...region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 71.6; E-value: 1.4e-21)
+ctg6_480_from_TLL56_bin.81_c00006_opera_c...region001	regulatory (smcogs) SMCOG1057:TetR family transcriptional regulator (Score: 89; E-value: 8.7e-27)
+ctg6_484_from_TLL56_bin.81_c00006_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 59.2; E-value: 1.1e-17)
+ctg6_491_from_TLL56_bin.81_c00006_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_486625_486711_from_TLL56_bin.81_c00006_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg13_74_from_TLL56_bin.97_c00013_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 66.4; E-value: 6.7e-20)
+ctg13_78_from_TLL56_bin.97_c00013_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_093597_093788_from_TLL56_bin.97_c00013_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg44_138_from_TLL57_bin.57_c00044_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_622_from_TLL58_bin.20_c00002_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 66.4; E-value: 6.7e-20)
+ctg2_626_from_TLL58_bin.20_c00002_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_673811_674002_from_TLL58_bin.20_c00002_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg13_81_from_TLL60_bin.50_c00013_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg27_6_from_TLL61_bin.19_c00027_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg19_101_from_TLL61_bin.41_c00019_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Lactococcin_972
+ctg3_300_from_TLL62_bin.43_c00003_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg3_307_from_TLL62_bin.43_c00003_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg3_317_from_TLL62_bin.43_c00003_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg4_19_from_TLL63_bin.34_opera_contig_28.region001	biosynthetic (rule-based-clusters) lassopeptide: micJ25
+ctg4_23_from_TLL63_bin.34_opera_contig_28.region001	regulatory (smcogs) SMCOG1136:GntR family transcriptional regulator (Score: 57.6; E-value: 2.3e-17)
+ctg1_2_from_TLL63_bin.61_opera_contig_78.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg1_7_from_TLL63_bin.61_opera_contig_78.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg1_8_from_TLL63_bin.61_opera_contig_78.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_013991_014179_from_TLL63_bin.61_opera_contig_78.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_014185_014424_from_TLL63_bin.61_opera_contig_78.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_014409_014549_from_TLL63_bin.61_opera_contig_78.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg1_37_from_TLL63_bin.61_opera_contig_78.region001	biosynthetic-additional (rule-based-clusters) PP-binding
+ctg1_561_from_TLL63_bin.89_c00001_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg16_57_from_TLL64_bin.52_c00016_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg12_446_from_TLL64_bin.76_c00012_opera_c...region001	biosynthetic-additional (rule-based-clusters) PF05402
+ctg12_450_from_TLL64_bin.76_c00012_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg7_73_from_TLL65_bin.32_c00007_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 66.4; E-value: 6.7e-20)
+ctg7_77_from_TLL65_bin.32_c00007_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg42_6_from_TLL65_bin.52_opera_contig_682.region001	regulatory (smcogs) SMCOG1032:RNA polymerase, sigma-24 subunit, ECF subfamily (Score: 55.9; E-value: 7.1e-17)
+ctg2_5_from_TLL65_bin.55_opera_contig_279.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_11_from_TLL65_bin.55_opera_contig_279.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_12_from_TLL65_bin.55_opera_contig_279.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_13_from_TLL65_bin.55_opera_contig_279.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_14_from_TLL65_bin.55_opera_contig_279.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_15_from_TLL65_bin.55_opera_contig_279.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_19_from_TLL65_bin.55_opera_contig_279.region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_21_from_TLL65_bin.55_opera_contig_279.region001	regulatory (smcogs) SMCOG1032:RNA polymerase, sigma-24 subunit, ECF subfamily (Score: 88.5; E-value: 6.7e-27)
+ctg4_570_from_TLL65_bin.8_c00004_opera_c...region002	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg4_572_from_TLL65_bin.8_c00004_opera_c...region002	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg4_577_from_TLL65_bin.8_c00004_opera_c...region002	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg4_596_from_TLL65_bin.8_c00004_opera_c...region002	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg4_598_from_TLL65_bin.8_c00004_opera_c...region002	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg4_602_from_TLL65_bin.8_c00004_opera_c...region002	regulatory (smcogs) SMCOG1008:response regulator (Score: 112.7; E-value: 3.1e-34)
+ctg75_21_from_TLL66_bin.39_c00075_opera_c...region001	biosynthetic-additional (rule-based-clusters) Peptidase_C39
+ctg75_22_from_TLL66_bin.39_c00075_opera_c...region001	biosynthetic-additional (rule-based-clusters) Peptidase_C39
+ctg89_3_from_TLL66_bin.39_c00089_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg27_4_from_TLL67_bin.44_c00027_opera_c...region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 132.6; E-value: 3.1e-40)
+ctg6_5_from_TLL67_bin.91_c00006_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg5_195_from_TLL68_bin.27_c00005_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_200168_200374_from_TLL68_bin.27_c00005_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg5_206_from_TLL68_bin.27_c00005_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg5_210_from_TLL68_bin.27_c00005_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 68; E-value: 2.2e-20)
+ctg24_88_from_TLL69_bin.18_c00024_opera_c...region001	biosynthetic-additional (rule-based-clusters) Peptidase_C39
+ctg3_403_from_TLL70_bin.5_c00003_opera_c...region001	biosynthetic (rule-based-clusters) lanthipeptide: Lant_dehydr_C
+ctg3_406_from_TLL70_bin.5_c00003_opera_c...region001	other (smcogs) SMCOG1077:phage integrase family protein (Score: 58.9; E-value: 1.2e-17)
+ctg35_5_from_TLL73_bin.36_c00035_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg19_61_from_TLL74_bin.24_c00019_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg6_88_from_TLL75_bin.38_c00006_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 66.4; E-value: 6.7e-20)
+ctg6_92_from_TLL75_bin.38_c00006_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_105657_105848_from_TLL75_bin.38_c00006_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg7_6_from_TLL78_bin.24_opera_contig_212.region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg7_18_from_TLL78_bin.24_opera_contig_212.region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg74_42_from_TLL79_bin.18_c00074_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg6_29_from_TLL81_bin.111_opera_contig_15.region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg34_78_from_TLL81_bin.48_c00034_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg2_12_from_TLL81_bin.6_c00002_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg23_8_from_TLL82_bin.22_opera_contig_447.region001	regulatory (smcogs) SMCOG1135:MarR family transcriptional regulator (Score: 88; E-value: 6.9e-27)
+ctg23_13_from_TLL82_bin.22_opera_contig_447.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg33_6_from_TLL82_bin.59_c00033_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg33_7_from_TLL82_bin.59_c00033_opera_c...region001	transport (smcogs) SMCOG1000:ABC transporter ATP-binding protein (Score: 102.4; E-value: 5.2e-31)
+ctg36_29_from_TLL83_bin.14_c00036_opera_c...region001	biosynthetic (rule-based-clusters) lassopeptide: micJ25
+ctg36_31_from_TLL83_bin.14_c00036_opera_c...region001	other (smcogs) SMCOG1026:transposase (Score: 72; E-value: 8.1e-22)
+ctg36_33_from_TLL83_bin.14_c00036_opera_c...region001	biosynthetic (rule-based-clusters) lassopeptide: micJ25
+ctg5_4_from_TLL83_bin.42_opera_contig_211.region001	biosynthetic-additional (rule-based-clusters) PF13186
+ctg5_6_from_TLL83_bin.42_opera_contig_211.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+allorf_098565_098666_from_TLL84_bin.74_opera_contig_12.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_101409_101504_from_TLL84_bin.74_opera_contig_12.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg2_113_from_TLL84_bin.74_opera_contig_12.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg2_117_from_TLL84_bin.74_opera_contig_12.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_114465_114683_from_TLL84_bin.74_opera_contig_12.region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg20_42_from_TLL84_bin.74_opera_contig_492.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg20_52_from_TLL84_bin.74_opera_contig_492.region001	transport (smcogs) SMCOG1069:putative ABC transporter permease protein (Score: 198.3; E-value: 2.7e-60)
+ctg9_60_from_TLL86_bin.46_c00009_opera_c...region001	regulatory (smcogs) SMCOG1057:TetR family transcriptional regulator (Score: 89; E-value: 8.7e-27)
+ctg9_65_from_TLL86_bin.46_c00009_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 59.2; E-value: 1.1e-17)
+ctg9_73_from_TLL86_bin.46_c00009_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+allorf_070885_070971_from_TLL86_bin.46_c00009_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg9_83_from_TLL86_bin.46_c00009_opera_c...region001	other (smcogs) SMCOG1151:transposase (Score: 185.7; E-value: 1.3e-56)
+ctg9_88_from_TLL86_bin.46_c00009_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg1_386_from_TLL86_bin.4_c00001_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+allorf_12473_12559_from_TLL88_bin.47_c00113_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg113_13_from_TLL88_bin.47_c00113_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg113_14_from_TLL88_bin.47_c00113_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg18_131_from_TLL89_bin.10_c00018_opera_c...region002	other (smcogs) SMCOG1148:hypothetical protein (Score: 60.6; E-value: 4e-18)
+ctg3_36_from_TLL95_bin.49_opera_contig_160.region001	regulatory (smcogs) SMCOG1136:GntR family transcriptional regulator (Score: 73.3; E-value: 3.8e-22)
+ctg20_18_from_TLL95_bin.70_c00020_opera_c...region001	other (smcogs) SMCOG1148:hypothetical protein (Score: 66.2; E-value: 7.7e-20)
+ctg20_22_from_TLL95_bin.70_c00020_opera_c...region001	biosynthetic-additional (lanthipeptides) predicted lanthipeptide
+ctg4_3_from_TLL95_bin.76_c00004_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg4_123_from_TLL96_bin.84_c00004_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg4_136_from_TLL96_bin.84_c00004_opera_c...region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg9_59_from_TLL97_bin.12_opera_contig_67.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg23_60_from_TLL97_bin.61_c00023_opera_c...region002	biosynthetic (rule-based-clusters) bacteriocin: TIGR03798
+ctg5_2_from_TLL98_bin.16_opera_contig_212.region001	biosynthetic (rule-based-clusters) bacteriocin: Bacteriocin_IIc
+ctg6_198_from_TLL99_bin.46_c00006_opera_c...region001	biosynthetic (rule-based-clusters) lassopeptide: micJ25
+ctg6_201_from_TLL99_bin.46_c00006_opera_c...region001	biosynthetic-additional (smcogs) SMCOG1111:GCN5-related N-acetyltransferase (Score: 94.9; E-value: 8.9e-29)
+ctg23_7_from_TLL99_bin.64_c00023_opera_c...region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
+ctg4_69_from_TLL99_bin.64_opera_contig_22.region001	biosynthetic (rule-based-clusters) sactipeptide: TIGR03973
