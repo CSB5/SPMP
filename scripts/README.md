@@ -4,7 +4,7 @@ This folder contains scripts used for the SPMP project.
 
 Environment used to generate most of the figure can be found under `envs/main.yaml`. A custom graphic library ([seahorse](https://github.com/jsgounot/Seahorse)) has been used for most of the graphical output. Graphics generated here were produced based on the [release alpha](https://github.com/jsgounot/Seahorse/releases/tag/latest). R version is 4.1.0.
 
-### Link between jupyter files and figures
+### Link between jupyter/Rmd files and figures
 
 F: Figure (main)
 SF: Supplemental figure
@@ -14,7 +14,10 @@ SF: Supplemental figure
 * `gtdb_improvement.ipynb`: F1.F and F1.G
 * `rarefaction_inext_run.ipynb`: F2.A
 * `strains_clustering`: F2.C, SF9
+* `BGC_class_barplot.Rmd`: F2.D
+* `bgc_network.ipynb`: F2.F
 * `reads_statistics.ipynb`: SF1 and SF2
 * `bracken_self_combine.ipynb`: SF4
 * `kraken_cre.ipynb`: SF5.A
 * `novel612.ipynb`: SF8
+* `ensemble_AMP_voting.Rmd`: Supplementary note 2

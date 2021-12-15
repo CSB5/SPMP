@@ -5,12 +5,12 @@ This repository contains data and scripts used for our Singapore Platinum Metage
 ## Directory structure
 
 - [envs](envs): Conda environment used for this project
-- [jupyter](jupyter): Jupyter notebook containing code used for this project
+- [scripts](jupyter and Rmarkdown): folder containing code used for this project
 - [tables](tables): Input data used
 
 ## Software versions
 
-Python - jupyter and R version. Add specific version for Minghao
+Python - jupyter and R version 4.1.0 with tidyverse version 1.3.1 
 
 ## Unusual library
 

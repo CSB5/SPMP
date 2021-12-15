@@ -1,0 +1,142 @@
+---
+title: "BGC_class_barplot"
+author: "Minghao Chia"
+date: "12/14/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load libraries
+
+```{r}
+library(tidyverse)
+```
+
+
+Define functions used in this script
+
+
+```{r}
+
+fix_labels <- function(df){
+df$TYPE <- ifelse(df$TYPE %in% c("lanthipeptide","bacteriocin", "thiopeptide","lassopeptide","cyanobactin","sactipeptide",
+"linaridin","bottromycin","microviridin","head_to_tail","glycocin",
+"LAP","lipolanthine","proteusin","microcin", "RaS-RiPP"), "RiPP", df$TYPE )
+df$TYPE <- ifelse(df$TYPE == "NRP", "NRPS", df$TYPE )
+df$TYPE <- ifelse(df$TYPE %in% c("T1PKS","T3PKS", "transAT-PKS", "hglE-KS"), 
+                                  "Polyketide", df$TYPE)
+df$TYPE <- ifelse(df$TYPE %in% c("oligosaccharide", "amglyccycl"), "Saccharide", df$TYPE )
+df$TYPE <- ifelse(df$TYPE == "terpene", "Terpene", df$TYPE )
+df$TYPE <- ifelse(df$TYPE %in% c("arylpolyene","betalactone","TfuA-related","butyrolactone",
+                                                           "ladderane","CDPS", "siderophore", "phenazine", "resorcinol",
+                                                           "phosphonate"), "Other", df$TYPE )
+
+df$TYPE <- ifelse(str_detect(string=df$TYPE,pattern="[;-]"), "Hybrid", df$TYPE)
+
+return(df)
+}
+
+```
+
+
+
+Load in metadata for each BGC 
+
+```{r, message=FALSE}
+
+##GCF_metadata contains information for each of the 27084 BGCs
+GCF_metadata <- read_tsv("../tables/all_GCF_curated_metadata.tsv")
+GCF_metadata <- fix_labels(GCF_metadata)
+
+```
+
+
+Load in metadata for representative clusters for each of the 16055 Gene Cluster Families (GCFs) defined by Bigscape. 
+
+```{r, message=FALSE}
+
+final_rep_clusters <- read_tsv("../tables/final_rep_clusters.tsv")
+final_rep_clusters<- fix_labels(final_rep_clusters)
+
+final_rep_clusters$novel_GCF <- ifelse(final_rep_clusters$rep_cluster %in% (GCF_metadata %>% dplyr::filter(novel_GCF == TRUE) %>% pull(QUERYID)), TRUE, FALSE) 
+```
+
+Stacked barcharts showing the number of BGCs (Fig 2D top) and GCFs (Fig 2D bottom) in different product classes that are known or novel in SPMP. Piecharts show the overall breakdown.
+
+Code to generate figure 2D top
+
+```{r}
+bgc_pdt_count <- plyr::count(GCF_metadata, c("TYPE", "novel_GCF"))
+
+bgc_class_barplot <- ggplot(bgc_pdt_count, aes(x=reorder(as.factor(TYPE), -freq), y=freq, fill=novel_GCF)) + 
+  geom_col(width=0.3) + theme_classic() + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, size=12), axis.text.y = element_text(size = 12)) +
+scale_x_discrete(limits=c("Saccharide", "RiPP", "Polyketide", "NRPS", "Terpene", "Hybrid", "Other" ))  +
+theme(axis.title=element_text(size=12)) + ylab("# BGC") + xlab(NULL) + theme(aspect.ratio = 1/1.3) +
+  scale_fill_manual(values= c("#6F9AB8", "#E6A66D"))
+
+bgc_class_barplot
+
+#piechart for panel 2D top
+#https://ggplot2.tidyverse.org/reference/coord_polar.html
+
+bgc_novel_pie <-  ggplot(plyr::count(GCF_metadata,"novel_GCF"), 
+                         aes(x="", y=freq, fill=novel_GCF)) + geom_col(width=1) + 
+  coord_polar("y", start= pi/3) +  scale_fill_manual(values= c("#6F9AB8", "#E6A66D"))
+
+bgc_novel_pie
+
+#What are the relative abundances in each category?
+
+#For known/non-novel GCFs
+BGC_novel_counts <- plyr::count(GCF_metadata,"novel_GCF")
+(BGC_novel_counts %>% filter(novel_GCF==FALSE) %>% pull(freq)) / nrow(GCF_metadata) #0.585
+
+
+#For novel GCFs
+(BGC_novel_counts %>% filter(novel_GCF==TRUE) %>% pull(freq)) / nrow(GCF_metadata) #0.414
+
+```
+
+
+Code to generate figure 2D bottom. 
+
+```{r echo=FALSE}
+
+GCF_pdt_count <- plyr::count(final_rep_clusters, c("TYPE", "novel_GCF"))
+
+GCF_class_barplot <- ggplot(GCF_pdt_count, aes(x=reorder(as.factor(TYPE), -freq), y=freq, fill=novel_GCF)) + 
+  geom_col(width=0.3) + theme_classic() + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, size=12), axis.text.y = element_text(size = 12)) +
+scale_x_discrete(limits=c("Saccharide", "RiPP", "Polyketide", "NRPS", "Terpene", "Hybrid", "Other" ))  +
+  scale_y_continuous(breaks=c(0,1000,2000,3000,4000,5000,6000)) +
+theme(axis.title=element_text(size=12)) + 
+  ylab("# GCF") + xlab(NULL) + theme(aspect.ratio = 1/1.3) +
+  scale_fill_manual(values= c("#6F9AB8", "#E6A66D"))
+ 
+GCF_class_barplot # panel 2D bottom
+
+
+#piechart for panel 2D bottom
+
+GCF_novel_pie <-  ggplot(plyr::count(final_rep_clusters,"novel_GCF"), 
+                         aes(x="", y=freq, fill=novel_GCF)) + geom_col(width=1) + 
+  coord_polar("y", start= pi/3) +  scale_fill_manual(values= c("#6F9AB8", "#E6A66D"))
+
+GCF_novel_pie
+
+#What are the relative abundances in each category?
+
+#For known/non-novel GCFs
+GCF_novel_counts <- plyr::count(final_rep_clusters,"novel_GCF")
+(GCF_novel_counts %>% filter(novel_GCF==FALSE) %>% pull(freq)) / nrow(final_rep_clusters) #0.497
+
+
+#For novel GCFs
+(GCF_novel_counts %>% filter(novel_GCF==TRUE) %>% pull(freq)) / nrow(final_rep_clusters) #0.503
+
+
+```
