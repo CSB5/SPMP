@@ -17,7 +17,7 @@ SF: Supplemental figure
 * `BGC_class_barplot.Rmd`: F2.D
 * `bgc_network.ipynb`: F2.F
 * `reads_statistics.ipynb`: SF1 and SF2
-* `bracken_self_combine.ipynb`: SF4
+* `bracken_self_combine.ipynb`: SF4 and SF8.A
 * `kraken_cre.ipynb`: SF5.A
-* `novel612.ipynb`: SF8
+* `novel612.ipynb`: SF8.B
 * `ensemble_AMP_voting.Rmd`: Supplementary note 2
