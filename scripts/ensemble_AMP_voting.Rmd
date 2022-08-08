@@ -23,7 +23,7 @@ GCF_metadata <- read_tsv("../tables/all_GCF_curated_metadata.tsv")
 
 ```
 
-This is code to reproduce the analyses in supplemental note 2 of the SPMP manuscript. 
+This is code to reproduce the analyses in supplemental note 3 of the SPMP manuscript. 
 
 Firstly, benchmark the ensemble voting method using a benchmark fasta file from Burdukiewicz et al 2020 Ampgram benchmark dataset (https://raw.githubusercontent.com/michbur/AmpGram-analysis/master/results/benchmark.fasta),
 

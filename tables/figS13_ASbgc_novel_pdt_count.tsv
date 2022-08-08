@@ -1,0 +1,14 @@
+TYPE	novel	freq
+Hybrid	FALSE	63
+Hybrid	TRUE	127
+NRPS	FALSE	361
+NRPS	TRUE	178
+Other	FALSE	198
+Other	TRUE	173
+Polyketide	FALSE	22
+Polyketide	TRUE	59
+RiPP	FALSE	1760
+RiPP	TRUE	855
+Saccharide	TRUE	3
+Terpene	FALSE	83
+Terpene	TRUE	27

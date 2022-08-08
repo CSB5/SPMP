@@ -66,6 +66,6 @@ Please direct any questions or feedback to [Jean-Sebastien Gounot](mailto:Jean-S
 | S. Figure 11.B   | `novel612.ipynb`                    |
 | S. Figure 12.A   | `strains_clustering.ipynb`          |
 | S. Figure 12.B   | `strains_clustering.ipynb`          |
-| S. Figure 13     |                                     |
-| S. Figure 14     |                                     |
-
+| S. Figure 13     | `BGC_class_barplot.Rmd`             |
+| S. Figure 14     | `BGC_class_barplot.Rmd`             |
+| S. Note 3        | `ensemble_AMP_voting.Rmd`           |

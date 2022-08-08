@@ -13,15 +13,14 @@ Load libraries
 
 ```{r}
 library(tidyverse)
+library(ComplexUpset)
 ```
 
-
-Define functions used in this script
-
+Define helper function
 
 ```{r}
 
-fix_labels <- function(df){
+fix_labels2 <- function(df){
 df$TYPE <- ifelse(df$TYPE %in% c("lanthipeptide","bacteriocin", "thiopeptide","lassopeptide","cyanobactin","sactipeptide",
 "linaridin","bottromycin","microviridin","head_to_tail","glycocin",
 "LAP","lipolanthine","proteusin","microcin", "RaS-RiPP"), "RiPP", df$TYPE )
@@ -42,101 +41,178 @@ return(df)
 ```
 
 
+Code to generate fig 2D, Fig S13 and Fig S14. 
 
-Load in metadata for each BGC 
-
-```{r, message=FALSE}
-
-##GCF_metadata contains information for each of the 27084 BGCs
-GCF_metadata <- read_tsv("../tables/all_GCF_curated_metadata.tsv")
-GCF_metadata <- fix_labels(GCF_metadata)
-
-```
-
-
-Load in metadata for representative clusters for each of the 16055 Gene Cluster Families (GCFs) defined by Bigscape. 
+Load metadata and input data for figure making
 
 ```{r, message=FALSE}
 
-final_rep_clusters <- read_tsv("../tables/final_rep_clusters.tsv")
-final_rep_clusters<- fix_labels(final_rep_clusters)
+bgc_novel_pdt_count <- read_tsv(file = "../tables/fig2D_top_bgc_novel_pdf_count.tsv", show_col_types = FALSE)
 
-final_rep_clusters$novel_GCF <- ifelse(final_rep_clusters$rep_cluster %in% (GCF_metadata %>% dplyr::filter(novel_GCF == TRUE) %>% pull(QUERYID)), TRUE, FALSE) 
+GCF_novel_pdt_count <- read_tsv(file = "../tables/fig2D_bot_GCF_novel_pdf_count.tsv", show_col_types = FALSE)
+
+all_GCF_uniq_fmt <- read_tsv(file="../tables/all_GCF_uniq_fmt.tsv", show_col_types = FALSE)
+
+final_rep_clusters <- read_tsv(file="../tables/final_rep_clusters.tsv", show_col_types = FALSE )
+
 ```
+
 
 Stacked barcharts showing the number of BGCs (Fig 2D top) and GCFs (Fig 2D bottom) in different product classes that are known or novel in SPMP. Piecharts show the overall breakdown.
 
-Code to generate figure 2D top
+Plot simplified product class distribution for novel and non-novel BGCs
 
-```{r}
-bgc_pdt_count <- plyr::count(GCF_metadata, c("TYPE", "novel_GCF"))
+Figure 2D top
 
-bgc_class_barplot <- ggplot(bgc_pdt_count, aes(x=reorder(as.factor(TYPE), -freq), y=freq, fill=novel_GCF)) + 
+```{r message=FALSE}
+
+bgc_novel_pdt_barplot <- ggplot(bgc_novel_pdt_count, 
+                                      aes(x=reorder(as.factor(TYPE), -freq), 
+                                          y=freq, fill=novel)) + 
   geom_col(width=0.3) + theme_classic() + 
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, size=12), axis.text.y = element_text(size = 12)) +
 scale_x_discrete(limits=c("Saccharide", "RiPP", "Polyketide", "NRPS", "Terpene", "Hybrid", "Other" ))  +
 theme(axis.title=element_text(size=12)) + ylab("# BGC") + xlab(NULL) + theme(aspect.ratio = 1/1.3) +
-  scale_fill_manual(values= c("#6F9AB8", "#E6A66D"))
+  scale_fill_manual(values= c("#E6A66D", "#6F9AB8"))
 
-bgc_class_barplot
+bgc_novel_pdt_barplot
 
-#piechart for panel 2D top
+#Pi chart
 #https://ggplot2.tidyverse.org/reference/coord_polar.html
 
-bgc_novel_pie <-  ggplot(plyr::count(GCF_metadata,"novel_GCF"), 
-                         aes(x="", y=freq, fill=novel_GCF)) + geom_col(width=1) + 
-  coord_polar("y", start= pi/3) +  scale_fill_manual(values= c("#6F9AB8", "#E6A66D"))
+bgc_novel_pie <-  ggplot(plyr::count(all_GCF_uniq_fmt,"novel"), 
+                         aes(x="", y=freq, fill=novel)) + geom_col(width=1) + 
+  coord_polar("y", start= pi/3) +  scale_fill_manual(values= c("#E6A66D","#6F9AB8"))
 
 bgc_novel_pie
 
-#What are the relative abundances in each category?
 
-#For known/non-novel GCFs
-BGC_novel_counts <- plyr::count(GCF_metadata,"novel_GCF")
-(BGC_novel_counts %>% filter(novel_GCF==FALSE) %>% pull(freq)) / nrow(GCF_metadata) #0.585
+#Fractions in the pi chart
 
+bgc_novel_stats <- plyr::count(all_GCF_uniq_fmt,"novel")
 
-#For novel GCFs
-(BGC_novel_counts %>% filter(novel_GCF==TRUE) %>% pull(freq)) / nrow(GCF_metadata) #0.414
+sum(bgc_novel_stats$freq) #27084
+
+bgc_novel_stats %>% filter(novel == TRUE) %>% pull(freq) %>% sum(.)/sum(bgc_novel_stats$freq) #0.882
+
 
 ```
 
-
-Code to generate figure 2D bottom. 
+Figure 2D bottom
 
 ```{r echo=FALSE}
 
-GCF_pdt_count <- plyr::count(final_rep_clusters, c("TYPE", "novel_GCF"))
-
-GCF_class_barplot <- ggplot(GCF_pdt_count, aes(x=reorder(as.factor(TYPE), -freq), y=freq, fill=novel_GCF)) + 
+GCF_novel_pdt_barplot <- ggplot(GCF_novel_pdt_count, aes(x=reorder(as.factor(TYPE), -freq), 
+                                                                     y=freq, fill=novel)) + 
   geom_col(width=0.3) + theme_classic() + 
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, size=12), axis.text.y = element_text(size = 12)) +
 scale_x_discrete(limits=c("Saccharide", "RiPP", "Polyketide", "NRPS", "Terpene", "Hybrid", "Other" ))  +
   scale_y_continuous(breaks=c(0,1000,2000,3000,4000,5000,6000)) +
 theme(axis.title=element_text(size=12)) + 
   ylab("# GCF") + xlab(NULL) + theme(aspect.ratio = 1/1.3) +
-  scale_fill_manual(values= c("#6F9AB8", "#E6A66D"))
+  scale_fill_manual(values= c("#E6A66D", "#6F9AB8"))
  
-GCF_class_barplot # panel 2D bottom
-
+GCF_novel_pdt_barplot # bottom panel for corrections
 
 #piechart for panel 2D bottom
 
-GCF_novel_pie <-  ggplot(plyr::count(final_rep_clusters,"novel_GCF"), 
-                         aes(x="", y=freq, fill=novel_GCF)) + geom_col(width=1) + 
-  coord_polar("y", start= pi/3) +  scale_fill_manual(values= c("#6F9AB8", "#E6A66D"))
+GCF_novel_pie <-  ggplot(plyr::count(final_rep_clusters,"novel"), 
+                         aes(x="", y=freq, fill=novel)) + geom_col(width=1) + 
+  coord_polar("y", start= pi/3) +  scale_fill_manual(values= c("#E6A66D", "#6F9AB8"))
 
-GCF_novel_pie
+GCF_novel_pie 
 
-#What are the relative abundances in each category?
+#Fractions in the pi chart
 
-#For known/non-novel GCFs
-GCF_novel_counts <- plyr::count(final_rep_clusters,"novel_GCF")
-(GCF_novel_counts %>% filter(novel_GCF==FALSE) %>% pull(freq)) / nrow(final_rep_clusters) #0.497
+GCF_novel_stats <- plyr::count(final_rep_clusters,"novel")
+
+sum(GCF_novel_stats$freq) #16055
+
+GCF_novel_stats %>% filter(novel == TRUE) %>% pull(freq) %>% sum(.)/sum(GCF_novel_stats$freq) #0.9426
+
+```
+
+Figure S13.
+```{r}
+
+ASbgc_novel_pdt_count <- plyr::count(fix_labels2(all_GCF_uniq_fmt %>% dplyr::filter(detector == "antismash")), 
+                                           c("TYPE", "novel"))
+
+ASbgc_novel_pdt_barplot <- ggplot(ASbgc_novel_pdt_count, 
+                                      aes(x=reorder(as.factor(TYPE), -freq), 
+                                          y=freq, fill=novel)) + 
+  geom_col(width=0.3) + theme_classic() + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, size=12), axis.text.y = element_text(size = 12)) +
+scale_x_discrete(limits=c("Saccharide", "RiPP", "Polyketide", "NRPS", "Terpene", "Hybrid", "Other" ))  +
+theme(axis.title=element_text(size=12)) + ylab("# BGC") + xlab(NULL) + theme(aspect.ratio = 1/1.3) +
+  scale_fill_manual(values= c("#E6A66D","#6F9AB8"))
+
+ASbgc_novel_pdt_barplot
 
 
-#For novel GCFs
-(GCF_novel_counts %>% filter(novel_GCF==TRUE) %>% pull(freq)) / nrow(final_rep_clusters) #0.503
+# Pi chart
+
+
+ASbgc_novel_pie <-  ggplot(plyr::count(all_GCF_uniq_fmt %>% dplyr::filter(detector == "antismash"),"novel"), 
+                         aes(x="", y=freq, fill=novel)) + geom_col(width=1) + 
+  coord_polar("y", start= pi/3) +  scale_fill_manual(values= c("#E6A66D","#6F9AB8"))
+
+ASbgc_novel_pie
+
+#Fractions in the pi chart
+
+ASbgc_novel_stats <- plyr::count(all_GCF_uniq_fmt %>% dplyr::filter(detector == "antismash"),"novel")
+
+sum(ASbgc_novel_stats$freq) #3909
+
+ASbgc_novel_stats %>% filter(novel == TRUE) %>% pull(freq) %>% sum(.)/sum(ASbgc_novel_stats$freq) #0.36377
 
 
 ```
+Fig S14
+
+```{r}
+
+categories <- c("in_curated_db", "in_HRGM", "antismash_SPMP_GCF", "novel")
+names(categories) <- categories
+
+GCF_upset_df <- final_rep_clusters %>% dplyr::filter(detector=="antismash") %>% dplyr::select(detector, in_curated_db, in_HRGM, novel)
+GCF_upset_df$antismash_SPMP_GCF <- ifelse(GCF_upset_df$detector=="antismash", TRUE, FALSE)
+
+GCF_upset_df <- GCF_upset_df %>% dplyr::select(-detector)
+
+#https://stackoverflow.com/questions/66323268/problem-with-upset-plot-intersection-numbers
+#https://krassowski.github.io/complex-upset/articles/Examples_R.html
+GCF_upset_plot <- upset(data=GCF_upset_df, intersect=categories,
+      width_ratio = 0.125, mode ="intersect",
+      sort_intersections = FALSE,
+      intersections = list( "antismash_SPMP_GCF", 
+                           c("antismash_SPMP_GCF", "novel"),
+                           c("antismash_SPMP_GCF", "in_HRGM"),
+                           c("antismash_SPMP_GCF", "in_curated_db"),
+                           c("antismash_SPMP_GCF", "in_curated_db", "in_HRGM")),
+      stripes="white")
+
+GCF_upset_plot
+
+#Pi chart for fig S14
+ASgcf_novel_pie <-  ggplot(plyr::count(final_rep_clusters %>% dplyr::filter(detector == "antismash"),"novel"), 
+                         aes(x="", y=freq, fill=novel)) + geom_col(width=1) + 
+  coord_polar("y", start= pi/3) +  scale_fill_manual(values= c("#E6A66D", "#6F9AB8"))
+
+ASgcf_novel_pie
+
+
+#Fractions in the pi chart
+
+ASgcf_novel_stats <- plyr::count(final_rep_clusters %>% dplyr::filter(detector == "antismash"),"novel")
+
+sum(ASgcf_novel_stats$freq) #1010
+
+ASgcf_novel_stats %>% filter(novel == TRUE) %>% pull(freq) %>% sum(.)/sum(ASgcf_novel_stats$freq) #0.487
+
+
+
+```
+
+
