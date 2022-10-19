@@ -23,7 +23,7 @@ Most of the figure has been generated using [seahorse](https://github.com/jsgoun
 
 ## Citation
 
-A preprint of our manuscript is available on [biorxiv](https://doi.org/10.1101/2022.05.05.490740).
+Please cite our manuscript on [Nature communication](https://www.nature.com/articles/s41467-022-33782-z).
 
 ## Contact
 
