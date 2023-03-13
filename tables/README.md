@@ -45,6 +45,6 @@ Raw inputs from jupyter lab scripts. Some inputs were preprocessed to be easily 
 * ampscannerv2_benchmark_Prediction_Summary.csv: AMPScanner v2 prediction results for the benchmarking peptide sequences
 * all_AS_novel_peptides.sizes: AA lengths of every short ORF > 10 AA and < 200 AA in novel BGCs encoding peptides with transporters, after Antismash predictions.
 * AS_peptides_with_transporter_gene_funcs_combined.tsv: Antismash annotated gene functions for every short ORF hort ORF > 10 AA and < 200 AA in novel BGCs encoding peptides with transporters
-* AS_novel_peptides_AMPDiscover_predictions.csv: AMPDiscover prediction results for candidate peptide sequences in this manuscript.
-* all_AS_novel_peptides_ampgram.tsv: AmpGram prediction results for candidate peptide sequences in this manuscript.
-* AS_novel_peptides_Prediction_Summary.csv: AMPScanner v2 prediction results for candidate peptide sequences in this manuscript.
+* AS_novel_peptide_transporter_AMPDiscover_predictions.csv: AMPDiscover prediction results for candidate peptide sequences in BGCs with transporters this manuscript.
+* all_AS_novel_peptides_ampgram.tsv: AmpGram prediction results for candidate peptide sequences in BGCs with transporters in this manuscript.
+* AS_novel_peptides_Prediction_Summary.csv: AMPScanner v2 prediction results for candidate peptide sequences in BGCs with transporters in this manuscript.

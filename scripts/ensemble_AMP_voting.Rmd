@@ -21,10 +21,40 @@ Load BGC GCF metadata
 ```{r}
 GCF_metadata <- read_tsv("../tables/all_GCF_curated_metadata.tsv")
 
+
 ```
 
-This is code to reproduce the analyses in supplemental note 3 of the SPMP manuscript. 
+This is code to reproduce the analyses in supplementary figure 15 of the SPMP manuscript. 
 
+#For Supplementary Figure 15A barplot
+
+```{r}
+
+all_GCF_uniq_fmt <- GCF_metadata
+
+#Rename hybrid ripp clusters to a defined name
+all_GCF_uniq_fmt$TYPE <- ifelse(all_GCF_uniq_fmt$TYPE %in% c("lanthipeptide;NRPS", "bacteriocin;T1PKS", "bacteriocin;lanthipeptide", 
+"betalactone;thiopeptide", "arylpolyene;bacteriocin", "NRPS;sactipeptide" ,"lassopeptide;sactipeptide"), "Hybrid", all_GCF_uniq_fmt$TYPE)
+
+peptide_classes <- c("lanthipeptide","bacteriocin", "thiopeptide","lassopeptide","cyanobactin","sactipeptide",
+"linaridin","bottromycin","microviridin","head_to_tail","glycocin",
+"LAP","lipolanthine","proteusin","microcin", "RaS-RiPP", "Hybrid")
+
+AS_BGC_peptide_class <- plyr::count(all_GCF_uniq_fmt  %>% filter(detector=="antismash" & 
+                                                                  TYPE %in% peptide_classes), c("TYPE", "novel"))
+
+AS_BGC_peptide_class$TYPE <- factor(AS_BGC_peptide_class$TYPE, levels=c("bacteriocin","lanthipeptide","LAP","lassopeptide","RaS-RiPP","sactipeptide","thiopeptide","Hybrid" ))
+
+
+novel_AS_BGC_peptide_class_barplot <- ggplot(AS_BGC_peptide_class %>% filter(novel==TRUE), aes(x=novel, y=freq, fill=TYPE)) + 
+  geom_col() + 
+  scale_fill_manual(values=c("#F8766D","#CD9600","#7CAE00","#E68613","#00BFC4","#00A9FF","#C77CFF","#FF61CC")) + theme_classic() + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1, size=12), axis.text.y = element_text(size = 12)) +theme(axis.title=element_text(size=12)) + ylab("# BGC") + xlab(NULL)
+
+novel_AS_BGC_peptide_class_barplot #S15A
+```
+
+
+#For Supplemental Fig 15B
 Firstly, benchmark the ensemble voting method using a benchmark fasta file from Burdukiewicz et al 2020 Ampgram benchmark dataset (https://raw.githubusercontent.com/michbur/AmpGram-analysis/master/results/benchmark.fasta),
 
 Load predictions from 4 models:
@@ -165,12 +195,12 @@ AS_ampscanner <- read_csv("../tables/AS_novel_peptides_Prediction_Summary.csv")
 AS_ampgram <- read_tsv("../tables/all_AS_novel_peptides_ampgram.tsv") %>% dplyr::rename(SeqID=peptide_name)
 
 #AmpDiscover results
-AS_ampdiscover <- read_csv("../tables/AS_novel_peptides_AMPDiscover_predictions.csv") %>% dplyr::rename(SeqID=IDs)
+AS_ampdiscover <- read_csv("../tables/AS_novel_peptide_transporter_AMPDiscover_predictions.csv") %>% dplyr::rename(SeqID=IDs)
 
 
 #Load peptide AA length data
 
-AS_novel_peptide_lengths <- read_tsv("../tables/all_AS_novel_peptides.sizes", 
+AS_novel_peptide_lengths <- read_tsv("../tables/AS_peptides_with_transporter.sizes", 
                                      col_names = c("SeqID", "AA_len"))
 
 #Load in Antismash functional annotations for these peptides
@@ -224,17 +254,17 @@ plyr::count(AS_novel_peptide_ensemble_AMP %>% dplyr::select("anno_taxon", "QUERY
 ```
 
 
-Out of 107 RiPP BGCs that were not bacteriocins, 54 of them were predicted to also be AMPs. 
+Out of RiPP BGCs that were not bacteriocins, how many are predicted to also be AMPs. 
 
 
 
 ```{r}
 
-#How many novel, non bacteriocin peptide BGCs with transporters are there, regardless of AMP/ABP activity? 107.
+#How many novel, non bacteriocin peptide BGCs with transporters are there, regardless of AMP/ABP activity?
 
-length(unique(AS_novel_peptide_ensemble %>% filter(TYPE != "bacteriocin") %>% pull(QUERYID))) #107
+length(unique(AS_novel_peptide_ensemble %>% filter(str_detect(AS_novel_peptide_ensemble$TYPE, pattern="bacteriocin", negate = TRUE)) %>% pull(QUERYID))) 
 
-#How many novel, non bacteriocin peptide BGCs with transporters are there, with predicted AMP/ABP activity? 54.
+#How many novel, non bacteriocin peptide BGCs with transporters are there, with predicted AMP/ABP activity? 
 
 length(unique(AS_novel_peptide_ensemble_AMP$QUERYID))
 
@@ -245,13 +275,13 @@ One example is a lanthipeptide (GCF 459) found in Dorea longicatena B. A blastp 
 Another example is a lassopeptide (GCF26) found in a Ruminococcus species. A blastp search of its primary sequence against the NCBI non-redundant protein sequence database found a 100% match to an uncharacterized protein (Sequence ID: SCH73849.1) found in the genome of an uncultured Blautia species. This peptide sequence comprises of 35% hydrophobic amino acids and a slight net positive charge, which could also favour its insertion into target cell walls.  Further experimental work is needed to verify that these peptides have anti-microbial properties against other gut bacteria. Taken together, our initial analyses highlight the potential of using the SPMP database for bioprospecting.  
 
 
-There are also 68 bacteriocin BGCs with transporters.
+Number of novel Bacteriocin BGCs with transporters.
 
 ```{r}
 
-length(unique(AS_novel_peptide_ensemble %>% filter(TYPE == "bacteriocin") %>% pull(QUERYID))) #68
+length(unique(AS_novel_peptide_ensemble %>% filter(str_detect(AS_novel_peptide_ensemble$TYPE, pattern="bacteriocin")) %>% pull(QUERYID))) #96
 
 
 ```
-
+Note: This count of 96 differs from the 99 in reported in the main manuscript because some of these antismash predicted bacteriocin BGCs did not have "short" peptide sequences/raised a translation error.
 
