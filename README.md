@@ -68,4 +68,4 @@ Please direct any questions or feedback to [Jean-Sebastien Gounot](mailto:Jean-S
 | S. Figure 12.B   | `strains_clustering.ipynb`          |
 | S. Figure 13     | `BGC_class_barplot.Rmd`             |
 | S. Figure 14     | `BGC_class_barplot.Rmd`             |
-| S. Note 3        | `ensemble_AMP_voting.Rmd`           |
+| S. Figure 15        | `ensemble_AMP_voting.Rmd`           |
